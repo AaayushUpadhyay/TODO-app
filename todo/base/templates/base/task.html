@@ -1,0 +1,23 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <div>
+       
+        <p><a href="{% url 'tasklist' %}">Go Back</a></p>
+        
+        {% if task.description == "" %}
+        <h3 style="margin:0">No description added</h3>
+        <h5><a href="{% url 'taskupdate' task.id %}" style="text-decoration: none;">Add Description</a></h5>
+        {% else %}
+        <h3 style="margin:0">{{task.description}}</h3>
+        <h5><a href="{% url 'taskupdate' task.id %}" style="text-decoration: none;">Edit</a></h5>
+        {% endif %}
+
+
+    </div>
+
+    
+</div>
+
+{% endblock %}
